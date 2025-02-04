@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Flask Formular Beispiel</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container mt-5">
+    <h1>Beispiel Formular</h1>
+    <form method="post">
+      <!-- Dropdown Box -->
+      <div class="mb-3">
+        <label for="dropdown" class="form-label">Dropdown Auswahl</label>
+        <select class="form-select" id="dropdown" name="dropdown">
+          <option selected>Bitte auswählen...</option>
+            {% for option in service.get_options() %}
+          <option value="1">{{option}}</option>
+            {% endfor %}
+        </select>
+      </div>
+
+      <!-- Erstes Textfeld -->
+      <div class="mb-3">
+        <label for="textfeld1" class="form-label">Textfeld 1</label>
+        <input type="text" class="form-control" id="textfeld1" name="textfeld1" placeholder="Geben Sie etwas ein">
+      </div>
+
+      <!-- Zweites Textfeld -->
+      <div class="mb-3">
+        <label for="textfeld2" class="form-label">Textfeld 2</label>
+        <input type="text" class="form-control" id="textfeld2" name="textfeld2" placeholder="Geben Sie etwas ein">
+      </div>
+
+      <!-- OK Button -->
+      <button type="submit" class="btn btn-primary">OK</button>
+    </form>
+  </div>
+
+  <!-- Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
