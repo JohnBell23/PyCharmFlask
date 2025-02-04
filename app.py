@@ -1,9 +1,13 @@
 
 from flask import Flask, render_template, request
 
+import additional_routes
 from Service.MainService import MainService
 
 app = Flask(__name__)
+
+app.register_blueprint(additional_routes.additional_bp)
+
 
 m_main_service = MainService()
 
