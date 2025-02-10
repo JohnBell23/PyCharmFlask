@@ -14,7 +14,12 @@
 
       <div class="mb-3">
         <label for="counterfield" class="form-label">Count</label>
-        <input id="counterfield" type="text" value="{{service.read_counter()}}" readonly>
+        <input id="counterfield" type="text" value="{{service.counter}}" readonly>
+      </div>
+
+      <div class="mb-3">
+        <label for="autocounterfield" class="form-label">Auto</label>
+        <input id="autocounterfield" type="text" value="{{autocounter.value}}" readonly>
       </div>
 
       <!-- OK Button -->

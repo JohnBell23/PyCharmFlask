@@ -1,9 +1,11 @@
 class CounterService:
 
-    counter = 0
+    def __init__(self):
+        self.__counter = 0
 
     def increment(self):
-        self.counter = self.counter + 1
+        self.__counter = self.__counter + 1
 
-    def read_counter(self):
-        return self.counter
+    @property
+    def counter(self):
+        return self.__counter
